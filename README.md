@@ -1,6 +1,8 @@
 # M2_DecisionTreeClassifier
 En el repositorio se encuentra en documento smoking_driking_dataset_Ver01.csv el cual fue sacado de un Dataset de Kaggle, el documento main.py que contiene el codigo de python para correr el modelo de árbol de desición para clasificación de nuestros datos y por ultimo la imagen en png del modelo del árbol de desición.
 
+**Nota:** El archivo csv esta comprimido en un Zip, es importante que antes de correr el programa se descomprima el archivo para no tener ningun problema al momento de correrlo
+
 ## Acerca del Dataset
 Este conjunto de datos  obtenido de Kaggle se recopilo del Servicio Nacional de Seguro Médico de Corea. Se excluyó toda la información personal y los datos sensibles.
 El propósito de este conjunto de datos es:
