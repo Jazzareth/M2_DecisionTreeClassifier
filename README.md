@@ -93,12 +93,20 @@ Al correr nuestro modelo anterior los resultados que obtenemos al reducir los da
 * Train Accuracy: 0.72
 * Test Accuracy: 0.714
   
-**Matriz de confusión:**
+**Matriz de confusión(Numero de datos):**
 
 |               | Predict 0     | Predict 1     |
 | ------------- | ------------- |-------------  | 
-| Real 0        | 183     36.6% | 79     15.8%  | 
-| Real 1        | 64      12.8% | 174    34.8%  |
+| Real 0        | 183           | 79            | 
+| Real 1        | 64            | 174           |
+
+**Matriz de confusión(Porcentaje):**
+
+|               | Predict 0     | Predict 1     |
+| ------------- | ------------- |-------------  | 
+| Real 0        |       36.6%   |        15.8%  | 
+| Real 1        |       12.8%   |        34.8%  |
+
 
 ![Issue showing an image grafica1.](grafic2.png)
 
@@ -121,12 +129,20 @@ Una vez que corremos el codigo obtenemos los siguientes resultados:
 * Ensemble Test Accuracy 0.748
 
 
-**Matriz de confusión:**
+**Matriz de confusión (Numero de datos):**
 
 |               | Predict 0     | Predict 1     |
 | ------------- | ------------- |-------------  | 
-| Real 0        | 193     38.6% | 69     13.8%  | 
-| Real 1        | 57      11.4% | 181    36.2%  |
+| Real 0        | 193           | 69            | 
+| Real 1        | 57            | 181           |
+
+**Matriz de confusión (Porcentajes):**
+
+|               | Predict 0     | Predict 1     |
+| ------------- | ------------- |-------------  | 
+| Real 0        |         38.6% |        13.8%  | 
+| Real 1        |         11.4% |        36.2%  |
+
 
 ![Issue showing an image grafica1.](grafic3.png)
 
