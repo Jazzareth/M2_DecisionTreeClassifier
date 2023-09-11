@@ -41,6 +41,8 @@ En este analisis solo clasificaremos si la persona es bebedor o no por lo que la
  El codigo contiene la implementación de un algoritmo de clasificación utilizando un árbol de desición utilizando la  biblioteca de sklearn y graphviz para el procesamiento y modelado de los datos.
  Para este ejemplo se utilizaron un nivel de profundidad de 5 para nuestro árbol y utilizamos 990000 datos para el entrenamiento del modelo y al finalizar se realizo una prueba con un fragmento del set de datos original de 50 datos para realiza algunas predicciones, para poder comparar las predicciónes del modelo con los datos reales.
 Los resultados de accuracy , que es el porcentaje de casos que el modelo ha acertado, tanto con los datos de train como test son los siguientes:
+* Train: 70%
+* Test: 74%
 
 ## Análisis y Reporte sobre el desempeño del modelo.
 Para entrenar el modelo utilizaremos árboles de decisión, en este caso utilizaremos 5 niveles de profundidad para nuestro modelo.Para poder saber el accuracy, en este caso como nuestro modelo es de clasificación el accuracy nos dice  qué porcentaje de los datos está clasificando  nuestro modelo de manera correcta.
