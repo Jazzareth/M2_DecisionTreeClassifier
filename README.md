@@ -76,5 +76,12 @@ Como podemos ver todas las pruebas están teniendo un resultado de desempeño si
 
 El sesgo de nuestro modelo es medio, ya que podemos ver que el error que presenta en Test, Train y Cross validation es de aproximadamente 30% - 35% lo cual si bien nos da la mayoría de los datos de forma correcta aun podemos ver datos que no se están prediciendo bien como se muestra en la gráfica de Train.
 
+![Issue showing an image grafica1.](grafica1.png)
+
+Ahora bien veamos que la varianza en nuestros datos es baja ya que tanto Train, Test como Cross validation están teniendo valores de accuracy entre 70% y 75% sin dejar ver una diferencia muy grande en estos datos. 
+
+Dicho lo anterior podríamos decir que el ajuste de nuestro modelo es de underfit ya que la varianza de los datos es baja sin embargo el sesgo es un poco alto y debemos tratar de reducirlo para poder tener mejores resultados de nuestro modelo . El underfit se da cuando un modelo es demasiado simple para capturar la complejidad de los datos, en este punto se puede deber a que estamos trabajando con 21 features o parámetros  para nuestro modelo de clasificación lo que resultó en un rendimiento deficiente tanto en los datos de entrenamiento como en los de prueba con un accuracy de 70% aproximadamente.
+
+
 
 
