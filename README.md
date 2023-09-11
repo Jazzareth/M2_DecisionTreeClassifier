@@ -84,6 +84,50 @@ Ahora bien veamos que la varianza en nuestros datos es baja ya que tanto Train, 
 
 Dicho lo anterior podríamos decir que el ajuste de nuestro modelo es de underfit ya que la varianza de los datos es baja sin embargo el sesgo es un poco alto y debemos tratar de reducirlo para poder tener mejores resultados de nuestro modelo . El underfit se da cuando un modelo es demasiado simple para capturar la complejidad de los datos, en este punto se puede deber a que estamos trabajando con 21 features o parámetros  para nuestro modelo de clasificación lo que resultó en un rendimiento deficiente tanto en los datos de entrenamiento como en los de prueba con un accuracy de 70% aproximadamente.
 
+Basándonos en el analisis anterior utilizaremos Bagging, metodo de ensamble, para poder integrar varios modelos de algoritmos de aprendizaje automático en una sola aplicación.Para este analisis utilizaremos los primeros 6000 datos de nuestro data set original el cual contiene 991346 (Utilizando 5500 para train y 500 para test) ya que con Bagging queremos ajustar varios modelos independientes y "juntar" sus predicciones para obtener un modelo con una varianza más baja. Pero debido a la cantidad de datos esto puede hacer que el modelo sea muy lento al momento de ajusarse.
+
+* **Nota:** El codigo de este analisis se encuentra disponible en el siguiente Colab de Drive: https://colab.research.google.com/drive/1PhKDIxMw8VeDHuaCWspZhnOonujgeSUP?usp=drive_link
+
+### Árbol de decisión
+Al correr nuestro modelo anterior los resultados que obtenemos al reducir los datos son los siguientes:
+* Train Accuracy: 0.72
+* Test Accuracy: 0.714
+  
+**Matriz de confusión:**
+
+|               | Predict 0     | Predict 1     |
+| ------------- | ------------- |-------------  | 
+| Real 0        | 183     36.6% | 79     15.8%  | 
+| Real 1        | 64      12.8% | 174    34.8%  |
+
+![Issue showing an image grafica1.](grafic2.png)
+
+### Bagging
+Al correr nuestro modelo anterior los resultados que obtenemos al reducir los datos son los siguientes:
+* Train Accuracy: 0.72
+* Test Accuracy: 0.714
+  
+**Matriz de confusión:**
+BaggingClassifier(
+    DecisionTreeClassifier(max_depth =10),
+    n_estimators = 1100,
+    max_samples = 500,
+    max_features=8,
+    bootstrap = True)
+    
+En el modelo de Bagging estamos utilizando 'arbol de decisión pero con una profundidad de 10, ahora bien en este caso definimos el numero de n_estimators es el numero de árboles que tendremos para entrenar mientras que el max_samples es el numero de datos que cada árbol tendra para ser entrenado, en este caso elejimos esos valores ya que se tienen 5500 datos para el train y asi podemos tener varios peque;os arboles para entrenarlos , por ultimo el features nos dice cuantas columnas vamos a utilizar para cada árbol, en este caso utilizaremos 8 que son una tercera parte de nuestro total de columnas.
+Una vez que corremos el codigo obtenemos los siguientes resultados:
+* Ensemble Train Accuracy: 0.7705454545454545
+* Ensemble Test Accuracy 0.748
 
 
+**Matriz de confusión:**
 
+|               | Predict 0     | Predict 1     |
+| ------------- | ------------- |-------------  | 
+| Real 0        | 193     38.6% | 69     13.8%  | 
+| Real 1        | 57      11.4% | 181    36.2%  |
+
+![Issue showing an image grafica1.](grafic3.png)
+
+Como podemos ver obtuvismos un mejor resultado al dividir nuestro data set en diferentes árboles pequeños, logrando que nuestra predicción de los datos fuera mejor, si bien aun se puede observar una varianza entre el accuracy de train y test, esta sigue siendo mediana pero logramos tener un sesgo menor al aumentar nuestro accuracy en ambos, mejorando asi nuestro modelo.
